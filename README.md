@@ -36,7 +36,7 @@ APP_ENV could be any envirement set in your config.py file
 ## Running with `docker-compose`
 
 You'll need [Docker](https://www.docker.com/products/docker-desktop) 
-installed to run this project with docker-compose. To build and launch the containerised app, 
+installed to run this project with ```docker-compose```. To build and launch the containerised app, 
 run:
 
 ```bash
@@ -45,7 +45,7 @@ docker-compose up -d --build
 
 You should see your server boot up, and should be accessible as before.
 
-When run with docker-compose, the default environment is development
+When run with ```docker-compose```, the default environment is development
 
 ## Running with `docker`
 
@@ -65,7 +65,7 @@ docker run -p 8080:8080 -e APP_ENV=development cache-api
 
 You should see your server boot up, and should be accessible as before.
 
-APP_ENV could be any envirement set in your config.py file
+```APP_ENV``` could be any envirement set in your config.py file
 
 ## Running the tests
 
