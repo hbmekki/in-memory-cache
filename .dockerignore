@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+**/__pycache__/
+
+# tests
+test/
+**/test/
+
+# git
+.git/
+.gitignore
+
+# docker
+Dockerfile
+docker_compose.yml
+.dockerignore
+
+.DS_Store
+README.md
+
+
+# Unit test / coverage reports
+.pytest_cache/
+**/.pytest_cache/
+cover/
+
+# pyenv
+.python-version
+
+# Environments
+venv/
