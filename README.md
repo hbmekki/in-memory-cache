@@ -4,6 +4,39 @@ This a simple implementation of an in-memory cache using Flask.
 
 It has been developed using Python 3.9.6 and [Docker](https://www.docker.com/). 
 
+The REST API will support the following operations:
+- GET /object/{key}
+ 
+    This will return the object stored at {key} if the object is not expired.
+    
+  Returns
+  
+      200: If the object is found and not-expired
+
+      404: If the object is not found or expired
+    
+- POST or PUT /object/{key}?ttl={ttl}
+ 
+    This will insert the {object} provided in the body of the request into a slot in memory at
+    {key}. If {ttl} is not specified it will use server’s default TTL from the config, if ttl=0 it
+    means store indefinitely
+    
+  Returns
+  
+      200: If the server was able to store the object
+
+      507: If the server has no storage
+
+- DELETE /object/{key}
+ 
+    This will delete the object stored at slot {key}
+    
+  Returns
+  
+      200: If the object at {key} was found and removed
+
+      404: If the object at {key} was not found or expired
+
 ## Configuration
 
 Make a copy of the file ```instance/sample-config.py``` and rename it ```config.py```. Set the configuration parameters as needed
