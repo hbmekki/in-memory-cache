@@ -152,9 +152,3 @@ class  CacheApi(Resource):
         if deleted:
             return {"message": "success"}, 200
         abort(404, message=f"Object at {key} is not found or expired")
-
-    def patch(self, key):
-        return {
-            "content": [(k,v.json_str, v._ttl) for k,v in self.cache._container.items()],
-            "params": [self.cache._max_slots, self.cache.default_ttl]
-        }
