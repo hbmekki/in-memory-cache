@@ -51,7 +51,7 @@ class  CacheApi(Resource):
         the cache. Both post and put methods call it.
         """
         ttl = parser.parse_args().get('ttl', None)
-        ttl = ttl if ttl >= 0 else None
+        ttl = ttl if ttl and ttl >= 0 else None
         obj_json_str  = json.dumps(request.get_json())
         cached = self.cache.set_entry(key, obj_json_str, ttl)
         if cached:

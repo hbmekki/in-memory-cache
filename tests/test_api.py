@@ -1,7 +1,7 @@
 
 import pytest
 from time import sleep
-from app import create_app
+from api import create_app
 
 
 @pytest.fixture
